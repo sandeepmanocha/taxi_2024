@@ -1,0 +1,16 @@
+config {
+    type: "table",
+    tags: ["FULL", "FILTER_DATA"]
+}
+
+SELECT
+  taxi.*,
+  crime.crime_primary_type,
+  crime.crime_description,
+  crime.cnt crime_incidents
+FROM
+  ${ref("taxi_trips_2024_with_location")} taxi
+LEFT JOIN
+  ${ref("crime_2024_with_location_summary")} crime
+ON
+  taxi.dropoff_zip_code = crime.zip_code

@@ -8,6 +8,11 @@ const tables = {
         "table": "zip_codes",
         "dataset": dataform.projectConfig.vars.GEO_BOUNDARY_DATASET,
         "project": dataform.projectConfig.vars.SOURCE_PROJECT,
+    },
+    "crime_2024_with_location_summary": {
+        "table": "crime_2024_with_location_summary",
+        "dataset": dataform.projectConfig.defaultDataset,
+        "project": dataform.projectConfig.vars.SOURCE_PROJECT,
     }   
 }
 
