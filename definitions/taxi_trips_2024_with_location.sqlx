@@ -13,8 +13,8 @@ SELECT
   zip.state_code dropoff_state_code,
   zip.zip_code dropoff_zip_code
 FROM
-  ${ref("taxi_trips_2024_with_location")} taxi_trips
+  ${ref("taxi_trips_2024")} taxi_trips
 LEFT JOIN
   ${ref("zip_codes")} zip
 ON
-  ST_CONTAINS(zip.zip_code_geom, geo_point)
+  ST_CONTAINS(zip.zip_code_geom, dropoff_location)
