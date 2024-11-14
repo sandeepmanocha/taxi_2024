@@ -1,0 +1,19 @@
+config {
+    type: "table",
+    tags: ["FULL","FILTER_DATA"],
+    assertions: {
+      nonNull: ["dropoff_location"]
+    }
+}
+
+
+SELECT
+  trip_start_timestamp,  
+  trip_end_timestamp,
+  dropoff_location,
+  extract(YEAR FROM trip_end_timestamp) trip_year
+FROM
+  `bigquery-public-data.chicago_taxi_trips.taxi_trips`
+WHERE extract(YEAR FROM trip_end_timestamp) = 2024
+and trip_end_timestamp is not null
+and dropoff_location is not null
