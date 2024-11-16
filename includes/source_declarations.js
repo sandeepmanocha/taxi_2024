@@ -12,7 +12,7 @@ const tables = {
     "crime_2024_with_location_summary": {
         "table": "crime_2024_with_location_summary",
         "dataset": dataform.projectConfig.defaultDataset,
-        "project": dataform.projectConfig.vars.SOURCE_PROJECT,
+        "project": dataform.projectConfig.vars.defaultProject,
     }   
 }
 
