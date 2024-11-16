@@ -1,0 +1,23 @@
+config {
+    type: "table",
+    tags: ["FULL", "FILTER_DATA"],
+    assertions: {
+        nonNull: ["dropoff_location"]
+    }
+}
+
+SELECT
+  trip_start_timestamp,
+  trip_end_timestamp,
+  ST_GEOGFROMTEXT(dropoff_location) dropoff_location,
+  EXTRACT(YEAR
+  FROM
+    trip_end_timestamp) trip_year
+FROM
+  ${ref("taxi_trips")} taxi_trips
+WHERE
+  EXTRACT(YEAR
+  FROM
+    trip_end_timestamp) = 2024
+  AND trip_end_timestamp IS NOT NULL
+  AND dropoff_location IS NOT null

@@ -1,0 +1,9 @@
+defaultProject: mde-pso-data-wranglers
+defaultLocation: US
+defaultDataset: adi_index
+defaultAssertionDataset: data_processing
+dataformCoreVersion: 3.0.0-beta.6
+vars:
+    SOURCE_PROJECT: bigquery-public-data
+    TAXI_DATASET: chicago_taxi_trips
+    GEO_BOUNDARY_DATASET: geo_us_boundaries
